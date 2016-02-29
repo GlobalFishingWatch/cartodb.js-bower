@@ -1,6 +1,6 @@
-// cartodb.js version: 3.15.8-skytruth-2
+// cartodb.js version: 3.15.8-skytruth-3
 // uncompressed version: cartodb.uncompressed.js
-// sha: e2fa08412dc5380f4a317f5cb02702675e75bc2d
+// sha: ba44a94fb3fb27ce09a255625b00d92ee3976a61
 (function() {
   var define;  // Undefine define (require.js), see https://github.com/CartoDB/cartodb.js/issues/543
   var root = this;
@@ -25661,7 +25661,7 @@ if (typeof window !== 'undefined') {
 
     var cdb = root.cdb = {};
 
-    cdb.VERSION = "3.15.8-skytruth-2";
+    cdb.VERSION = "3.15.8-skytruth-3";
     cdb.DEBUG = false;
 
     cdb.CARTOCSS_VERSIONS = {
@@ -26669,8 +26669,13 @@ var Loader = cdb.vis.Loader = cdb.core.Loader = {
       script.type = 'text/javascript';
       script.src = src;
       script.async = true;
-      script.onerror = function (err) {
-        vizjson();
+      script.onerror = function () {
+        window.vizjson();
+      };
+      script.onload = function () {
+        if (Loader._script == script) {
+          window.vizjson();
+        }
       };
       if (!Loader.head) {
         Loader.head = document.getElementsByTagName('head')[0];
@@ -26729,7 +26734,6 @@ window.vizjson = function(data) {
     Loader.get(a[0], a[1]);
   }
 };
-
 
 cdb.core.util = {};
 
