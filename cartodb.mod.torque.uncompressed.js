@@ -1,5 +1,11 @@
-// version: 3.15.8-skytruth-3
-// sha: ba44a94fb3fb27ce09a255625b00d92ee3976a61
+// version: 3.15.8-skytruth-4
+// sha: b25e6325f4a85420a3c04f9e3edd55f8d16063c4
+
+window.cartotmp = {};
+['require', 'define', 'module'].map(function (name) {
+    window.cartotmp[name] = window[name];
+    delete window[name];
+});
 
 if(cartodb){
 	// Keep the global version of jQuery, if there is any
@@ -7237,3 +7243,7 @@ for (var lib in window._prev){
 cartodb.moduleLoad('torque', torque);
 
 Profiler = cartodb.core.Profiler;
+
+['require', 'define', 'module'].map(function (name) {
+  window[name] = window.cartotmp[name];
+});

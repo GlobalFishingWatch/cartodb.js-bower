@@ -1,5 +1,5 @@
-// version: 3.15.8-skytruth-3
-// sha: ba44a94fb3fb27ce09a255625b00d92ee3976a61
+// version: 3.15.8-skytruth-4
+// sha: b25e6325f4a85420a3c04f9e3edd55f8d16063c4
 
 ;(function() {
   this.cartodb = {};
@@ -1125,7 +1125,7 @@ var _ = this._; _.noConflict();
 
     var cdb = root.cdb = {};
 
-    cdb.VERSION = "3.15.8-skytruth-3";
+    cdb.VERSION = "3.15.8-skytruth-4";
     cdb.DEBUG = false;
 
     cdb.CARTOCSS_VERSIONS = {

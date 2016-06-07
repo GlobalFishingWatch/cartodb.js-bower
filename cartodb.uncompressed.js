@@ -1,6 +1,6 @@
-// cartodb.js version: 3.15.8-skytruth-3
+// cartodb.js version: 3.15.8-skytruth-4
 // uncompressed version: cartodb.uncompressed.js
-// sha: ba44a94fb3fb27ce09a255625b00d92ee3976a61
+// sha: b25e6325f4a85420a3c04f9e3edd55f8d16063c4
 (function() {
   var define;  // Undefine define (require.js), see https://github.com/CartoDB/cartodb.js/issues/543
   var root = this;
@@ -25661,7 +25661,7 @@ if (typeof window !== 'undefined') {
 
     var cdb = root.cdb = {};
 
-    cdb.VERSION = "3.15.8-skytruth-3";
+    cdb.VERSION = "3.15.8-skytruth-4";
     cdb.DEBUG = false;
 
     cdb.CARTOCSS_VERSIONS = {
